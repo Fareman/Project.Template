@@ -1,6 +1,7 @@
-
-namespace WebApi.Template
+namespace Template.WebApi
 {
+    using Template.WebApi.Utilities;
+
     public class Program
     {
         public static void Main(string[] args)
@@ -8,6 +9,7 @@ namespace WebApi.Template
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddUserModule();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,7 +28,6 @@ namespace WebApi.Template
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
